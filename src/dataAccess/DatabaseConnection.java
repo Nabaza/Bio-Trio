@@ -1,5 +1,6 @@
-package model;
+package dataAccess;
 
+import java.io.IOException;
 import java.sql.Connection;
 import java.sql.DriverManager;
 import java.sql.SQLException;
@@ -46,6 +47,13 @@ public class DatabaseConnection {
             System.out.println("\n--CONNECTION FAILED--");
         }
         
+        return connect;
+    }
+
+    public Connection getConnection() throws IOException{
+        if(connect == null){
+            throw new IOException("--CONNECTION ERROR: NOT FOUND--");
+        }
         return connect;
     }
     
