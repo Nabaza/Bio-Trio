@@ -1,5 +1,6 @@
-package model;
+package dataAccess;
 
+import java.io.IOException;
 import java.sql.Connection;
 import java.sql.DriverManager;
 import java.sql.SQLException;
@@ -24,9 +25,11 @@ public class DatabaseConnection {
         return instance;
     }
 
-    public Connection connect(String url, String username, String password) {
+    public Connection connect(String host, String port, String databaseName, String username, String password) {
         System.out.println("--STARTING DATABASE CONNECTION--");
 
+        String url = "jdbc:postgresql://" + host + ":" + port + "/" + databaseName;
+        
         try {
 //      locates JDBC driver
             Class.forName(DRIVER);
@@ -46,6 +49,13 @@ public class DatabaseConnection {
             System.out.println("\n--CONNECTION FAILED--");
         }
         
+        return connect;
+    }
+
+    public Connection getConnection() throws IOException{
+        if(connect == null){
+            throw new IOException("--CONNECTION ERROR: NOT FOUND--");
+        }
         return connect;
     }
     
