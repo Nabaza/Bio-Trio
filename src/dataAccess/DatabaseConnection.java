@@ -26,9 +26,10 @@ public class DatabaseConnection {
     }
 
     public Connection connect(String host, String port, String databaseName, String username, String password) {
-        System.out.println("--STARTING DATABASE CONNECTION--");
-
+//      creates concat String url using host, port and database name
         String url = "jdbc:postgresql://" + host + ":" + port + "/" + databaseName;
+        
+        System.out.println("--STARTING DATABASE CONNECTION--");
         
         try {
 //      locates JDBC driver
