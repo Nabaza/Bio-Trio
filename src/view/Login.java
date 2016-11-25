@@ -24,6 +24,7 @@ public class Login extends javax.swing.JFrame {
     private void initComponents() {
 
         northPanel = new javax.swing.JPanel();
+        bioTrioLabel = new javax.swing.JLabel();
         southPanel = new javax.swing.JPanel();
         loginPanel = new javax.swing.JPanel();
         loginButton = new javax.swing.JButton();
@@ -57,9 +58,15 @@ public class Login extends javax.swing.JFrame {
         setTitle("Login");
         setMaximumSize(new java.awt.Dimension(800, 600));
         setMinimumSize(new java.awt.Dimension(800, 600));
+        setName("loginFrame"); // NOI18N
 
         northPanel.setMinimumSize(new java.awt.Dimension(800, 100));
         northPanel.setPreferredSize(new java.awt.Dimension(800, 100));
+
+        bioTrioLabel.setFont(new java.awt.Font("Tahoma", 1, 36)); // NOI18N
+        bioTrioLabel.setText("Bio Trio Access");
+        northPanel.add(bioTrioLabel);
+
         getContentPane().add(northPanel, java.awt.BorderLayout.NORTH);
 
         southPanel.setPreferredSize(new java.awt.Dimension(800, 100));
@@ -209,7 +216,8 @@ public class Login extends javax.swing.JFrame {
         try {
             if (DatabaseConnection.getInstance().connect(host, port, databaseName, username, password) != null) {
                 JOptionPane.showMessageDialog(null, "--ACCESS GRANTED--");
-                //ADD INITIALIZE NEXT WINDOW
+                setVisible(false);
+                //ADD INITIALIZE MovieSelect.java
             } else {
                 JOptionPane.showMessageDialog(null, "--ACCESS DENIED--");
             }
@@ -261,6 +269,7 @@ public class Login extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JLabel bioTrioLabel;
     private javax.swing.JPanel centerPanel;
     private javax.swing.JLabel dbLabel;
     private javax.swing.JPanel dbPanel;
