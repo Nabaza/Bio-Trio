@@ -46,10 +46,8 @@ public class MovieSelect extends javax.swing.JFrame {
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setTitle("Select Movie");
-        setMaximumSize(new java.awt.Dimension(850, 600));
         setMinimumSize(new java.awt.Dimension(850, 600));
         setName("movieSelectFrame"); // NOI18N
-        setPreferredSize(new java.awt.Dimension(850, 600));
 
         northPanel.setMaximumSize(new java.awt.Dimension(800, 75));
         northPanel.setMinimumSize(new java.awt.Dimension(800, 100));
@@ -126,7 +124,7 @@ public class MovieSelect extends javax.swing.JFrame {
 
             },
             new String [] {
-                "Forestilling", "Sal", "Ledige pladser"
+                "Tidspunkt", "Sal", "Ledige pladser"
             }
         ) {
             boolean[] canEdit = new boolean [] {
