@@ -37,6 +37,6 @@ public class Booking {
         for (Seat seat : BOOKED_SEATS) {
             output = output + "\n" + seat.toString();
         }
-        return output;
+        return output + "\nSamlet pris: " + PRICE;
     }
 }

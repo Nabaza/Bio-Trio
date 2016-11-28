@@ -9,12 +9,12 @@ package view;
  *
  * @author Mads
  */
-public class MovieSelect extends javax.swing.JFrame {
+public class MovieSelection extends javax.swing.JFrame {
 
     /**
      * Creates new form MovieSelect
      */
-    public MovieSelect() {
+    public MovieSelection() {
         initComponents();
     }
 
@@ -40,6 +40,7 @@ public class MovieSelect extends javax.swing.JFrame {
         datoSelectBox = new javax.swing.JComboBox<>();
         buttonPanel = new javax.swing.JPanel();
         chooseButton = new javax.swing.JButton();
+        backButton = new javax.swing.JButton();
         movieRightPanel = new javax.swing.JPanel();
         movieTablePane = new javax.swing.JScrollPane();
         movieTable = new javax.swing.JTable();
@@ -108,9 +109,20 @@ public class MovieSelect extends javax.swing.JFrame {
 
         buttonPanel.setPreferredSize(new java.awt.Dimension(130, 150));
 
-        chooseButton.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
+        chooseButton.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
         chooseButton.setText("Vælg");
+        chooseButton.setPreferredSize(new java.awt.Dimension(89, 30));
         buttonPanel.add(chooseButton);
+
+        backButton.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
+        backButton.setText("Tilbage");
+        backButton.setPreferredSize(new java.awt.Dimension(89, 30));
+        backButton.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                backButtonActionPerformed(evt);
+            }
+        });
+        buttonPanel.add(backButton);
 
         movieLeftPanel.add(buttonPanel);
 
@@ -149,6 +161,11 @@ public class MovieSelect extends javax.swing.JFrame {
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
+    private void backButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_backButtonActionPerformed
+        setVisible(false);
+        new Login().setVisible(true);
+    }//GEN-LAST:event_backButtonActionPerformed
+
     /**
      * @param args the command line arguments
      */
@@ -166,25 +183,27 @@ public class MovieSelect extends javax.swing.JFrame {
                 }
             }
         } catch (ClassNotFoundException ex) {
-            java.util.logging.Logger.getLogger(MovieSelect.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(MovieSelection.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (InstantiationException ex) {
-            java.util.logging.Logger.getLogger(MovieSelect.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(MovieSelection.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (IllegalAccessException ex) {
-            java.util.logging.Logger.getLogger(MovieSelect.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(MovieSelection.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (javax.swing.UnsupportedLookAndFeelException ex) {
-            java.util.logging.Logger.getLogger(MovieSelect.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(MovieSelection.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         }
+        //</editor-fold>
         //</editor-fold>
 
         /* Create and display the form */
         java.awt.EventQueue.invokeLater(new Runnable() {
             public void run() {
-                new MovieSelect().setVisible(true);
+                new MovieSelection().setVisible(true);
             }
         });
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JButton backButton;
     private javax.swing.JLabel bioTrioLabel;
     private javax.swing.JPanel buttonPanel;
     private javax.swing.JPanel centerPanel;
