@@ -11,11 +11,24 @@ public class Booking {
     private final Customer CUSTOMER;
     private final Show SHOW;
     private final ArrayList<Seat> BOOKED_SEATS;
+    private final int PRICE;
 
     public Booking(Customer customer, Show show, ArrayList bookedSeats) {
         CUSTOMER = customer;
         SHOW = show;
         BOOKED_SEATS = bookedSeats;
+        PRICE = priceFinalize();
+    }
+
+    private int priceFinalize() {
+        int price = 0;
+        for (Seat seat : BOOKED_SEATS) {
+            price = price + 100;
+        }
+        if (BOOKED_SEATS.size() == 4) {
+            price = price - 50;
+        }
+        return price;
     }
 
     @Override

@@ -34,6 +34,10 @@ public class Cinema {
     public Seat getSeat(int row, int seat){
         return SEATS[row][seat];
     }
+    
+    public Seat[][] getSEATS() {
+        return SEATS;
+    }
 
     @Override
     public String toString() {
@@ -54,9 +58,5 @@ public class Cinema {
 
     public int getSEAT_SUM() {
         return SEAT_SUM;
-    }
-
-    public Seat[][] getSEATS() {
-        return SEATS;
     }
 }

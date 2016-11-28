@@ -217,7 +217,7 @@ public class Login extends javax.swing.JFrame {
             if (DatabaseConnection.getInstance().connect(host, port, databaseName, username, password) != null) {
                 JOptionPane.showMessageDialog(null, "--ACCESS GRANTED--");
                 setVisible(false);
-                //ADD INITIALIZE MovieSelect.java
+                new MovieSelect().setVisible(true);
             } else {
                 JOptionPane.showMessageDialog(null, "--ACCESS DENIED--");
             }
