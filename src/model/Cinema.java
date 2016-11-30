@@ -23,9 +23,9 @@ public class Cinema {
     private Seat[][] initializeSeats() {
         Seat[][] seats = new Seat[ROW_COUNT][SEAT_COUNT];
 
-        for (int i = 0; i < ROW_COUNT; i++) {
-            for (int j = 0; j < SEAT_COUNT; j++) {
-                seats[i][j] = new Seat(i, j);
+        for (int row = 0; row < ROW_COUNT; row++) {
+            for (int seat = 0; seat < SEAT_COUNT; seat++) {
+                seats[row][seat] = new Seat(row, seat);
             }
         }
         return seats;

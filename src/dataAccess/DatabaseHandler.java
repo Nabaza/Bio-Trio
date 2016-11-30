@@ -4,13 +4,22 @@ import java.util.ArrayList;
 import model.Booking;
 import model.Show;
 
-public class DatabaseConnectionHandler {
+public class DatabaseHandler {
 // declaration of handler instance variables
     private final DatabaseConnection CONNECTION;
+    private static DatabaseHandler instance;
 
-    public DatabaseConnectionHandler() {
+    private DatabaseHandler() {
 //      then calls getInstance to access Singleton pattern object
         CONNECTION = DatabaseConnection.getInstance();
+    }
+    
+    public static DatabaseHandler getInstance(){
+        //      static method call to get Singleton pattern instance - if it does not exist yet it will be created        
+        if (instance != null) {
+            instance = new DatabaseHandler();
+        }
+        return instance;
     }
     
     public ArrayList<Show> getShowList(){
